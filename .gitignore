@@ -233,3 +233,4 @@ _Pvt_Extensions
 app.db
 app.db-shm
 app.db-wal
+.idea
