@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import ApiAuthorzationRoutes from "./components/api-authorization/ApiAuthorizationRoutes";
-import { Counter } from "./components/Counter";
-import { FetchData } from "./components/FetchData";
+import { Counter } from "./pages/Counter";
+import { FetchData } from "./pages/FetchData";
 import { Home } from "./pages/Home";
 
 // Extended route interface to include our custom properties
