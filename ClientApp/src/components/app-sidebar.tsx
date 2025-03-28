@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import {
   IconCamera,
   IconChartBar,
@@ -15,12 +15,12 @@ import {
   IconSearch,
   IconSettings,
   IconUsers,
-} from "@tabler/icons-react"
+} from "@tabler/icons-react";
 
-import { NavDocuments } from "src/components/nav-documents"
-import { NavMain } from "src/components/nav-main"
-import { NavSecondary } from "src/components/nav-secondary"
-import { NavUser } from "src/components/nav-user"
+import { NavDocuments } from "src/components/nav-documents";
+import { NavMain } from "src/components/nav-main";
+import { NavSecondary } from "src/components/nav-secondary";
+import { NavUser } from "src/components/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -29,23 +29,23 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "src/components/ui/sidebar"
+} from "src/components/ui/sidebar";
 
 const data = {
   user: {
-    name: "shadcn",
+    name: "Demo user",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
-      title: "Dashboard",
-      url: "#",
+      title: "Home",
+      url: "/",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "My sets",
+      url: "/my-sets",
       icon: IconListDetails,
     },
     {
@@ -146,7 +146,7 @@ const data = {
       icon: IconFileWord,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -168,12 +168,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        {/* <NavDocuments items={data.documents} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
