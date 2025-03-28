@@ -1,7 +1,8 @@
 {
   "name": "legotrade",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/cli": "^4.0.17",
@@ -37,10 +38,13 @@
     "workbox-streams": "^6.5.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "ajv": "^8.11.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
@@ -49,8 +53,12 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
+    "jsdom": "^23.0.1",
     "nan": "^2.16.0",
-    "typescript": "^4.9.0"
+    "typescript": "^4.9.0",
+    "vite": "^5.0.8",
+    "vite-plugin-mkcert": "^1.17.8",
+    "vitest": "^1.1.0"
   },
   "overrides": {
     "autoprefixer": "10.4.5"
@@ -60,10 +68,10 @@
     "nth-check": "^3.0.1"
   },
   "scripts": {
-    "prestart": "bun aspnetcore-https && bun aspnetcore-react",
-    "start": "rimraf ./build && react-scripts start",
-    "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/"
   },
