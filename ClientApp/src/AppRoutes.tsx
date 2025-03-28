@@ -4,6 +4,7 @@ import { Counter } from "./pages/Counter";
 import { FetchData } from "./pages/FetchData";
 import { Home } from "./pages/Home";
 import { MySets } from "./pages/MySets";
+import { AddEditItem } from "./pages/AddEditItem";
 
 // Extended route interface to include our custom properties
 interface CustomRouteObject {
@@ -30,6 +31,16 @@ export const AppRoutes: CustomRouteObject[] = [
     path: "/fetch-data",
     canSkipAuth: false,
     element: <FetchData />,
+  },
+  {
+    path: "/my-sets/add",
+    element: <AddEditItem />,
+    canSkipAuth: false,
+  },
+  {
+    path: "/my-sets/edit/:id",
+    element: <AddEditItem />,
+    canSkipAuth: false,
   },
 ];
 

@@ -6,22 +6,24 @@ import tailwindcss from '@tailwindcss/vite'
 
 const target = 'https://localhost:7049';
 
+const proxy = {
+  '/api': { target, secure: false },
+  '/weatherforecast': { target, secure: false },
+  '/_configuration': { target, secure: false },
+  '/.well-known': { target, secure: false },
+  '/Identity': { target, secure: false },
+  '/connect': { target, secure: false },
+  '/ApplyDatabaseMigrations': { target, secure: false },
+  '/_framework': { target, secure: false }
+};
+
 export default defineConfig({
   plugins: [react(), mkcert(), tailwindcss()],
   server: {
     port: 44449,
     host: 'localhost',
     https: true,
-    proxy: {
-      '/api': { target, secure: false },
-      '/weatherforecast': { target, secure: false },
-      '/_configuration': { target, secure: false },
-      '/.well-known': { target, secure: false },
-      '/Identity': { target, secure: false },
-      '/connect': { target, secure: false },
-      '/ApplyDatabaseMigrations': { target, secure: false },
-      '/_framework': { target, secure: false }
-    },
+    proxy: proxy,
     watch: {
       usePolling: true
     }
@@ -30,16 +32,7 @@ export default defineConfig({
     port: 44449,
     host: 'localhost',
     https: true,
-    proxy: {
-      '/api': { target, secure: false },
-      '/weatherforecast': { target, secure: false },
-      '/_configuration': { target, secure: false },
-      '/.well-known': { target, secure: false },
-      '/Identity': { target, secure: false },
-      '/connect': { target, secure: false },
-      '/ApplyDatabaseMigrations': { target, secure: false },
-      '/_framework': { target, secure: false }
-    },
+    proxy: proxy,
   },
   resolve: {
     alias: {
