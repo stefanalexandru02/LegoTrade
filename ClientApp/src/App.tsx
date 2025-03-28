@@ -1,11 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { Home } from "./components/Home";
+import { Home } from "./pages/Home";
 import AuthorizeRoute from "./components/api-authorization/AuthorizeRoute";
 import { ApplicationPaths } from "./components/api-authorization/ApiAuthorizationConstants";
-
-import "./custom.css";
 import AppRoutes from "./AppRoutes";
 
 export default function App() {

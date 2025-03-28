@@ -1,38 +1,38 @@
-import React from "react";
-import { Container } from "reactstrap";
-import { NavMenu } from "./NavMenu";
-import { SidebarInset, SidebarProvider } from "./ui/sidebar";
-import { AppSidebar } from "./app-sidebar";
-import { SiteHeader } from "./site-header";
-import { SectionCards } from "./section-cards";
-import { ChartAreaInteractive } from "./chart-area-interactive";
-import { DataTable } from "./data-table";
+import React, { Component } from "react";
+import { Button } from "../components/ui/button";
+import { SidebarInset, SidebarProvider } from "../components/ui/sidebar";
+import { AppSidebar } from "../components/app-sidebar";
+import { SiteHeader } from "../components/site-header";
+import { SectionCards } from "../components/section-cards";
+import { ChartAreaInteractive } from "../components/chart-area-interactive";
+import { DataTable } from "../components/data-table";
 
-interface LayoutProps {
-  children?: React.ReactNode;
-}
+export class Home extends Component {
+  static displayName = Home.name;
 
-export function Layout({ children }: LayoutProps) {
-  return (
-    <SidebarProvider>
-      <AppSidebar variant="inset" /> {/* <NavMenu /> */}
-      <SidebarInset>
-        <SiteHeader />
-        <div className="flex flex-1 flex-col">
-          <div className="@container/main flex flex-1 flex-col gap-2">
-            <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-              <SectionCards />
-              <div className="px-4 lg:px-6">
-                <ChartAreaInteractive />
-              </div>
-              <DataTable data={data} />
-            </div>
-          </div>
-        </div>
-      </SidebarInset>
-      {/* <Container tag="main">{children}</Container> */}
-    </SidebarProvider>
-  );
+  render() {
+    return (
+      // <SidebarProvider>
+      //   <AppSidebar variant="inset" />
+      // <SidebarInset>
+      //   <SiteHeader />
+      //   <div className="flex flex-1 flex-col">
+      //     <div className="@container/main flex flex-1 flex-col gap-2">
+      //       <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+      //         <SectionCards />
+      //         <div className="px-4 lg:px-6">
+      //           <ChartAreaInteractive />
+      //         </div>
+      //         <DataTable data={data} />
+      //       </div>
+      //     </div>
+      //   </div>
+      // </SidebarInset>
+      // </SidebarProvider>
+      // <h1>test</h1>
+      <></>
+    );
+  }
 }
 
 const data = [
