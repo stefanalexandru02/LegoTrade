@@ -19,6 +19,9 @@ export default defineConfig({
         target: 'https://localhost:7049',
         secure: false
       }
+    },
+    watch: {
+      usePolling: true
     }
   },
   preview: {
@@ -34,7 +37,7 @@ export default defineConfig({
         target: 'https://localhost:7049',
         secure: false
       }
-    }
+    },
   },
   resolve: {
     alias: {
