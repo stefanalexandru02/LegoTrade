@@ -8,11 +8,11 @@ import { Home } from "./pages/Home";
 interface CustomRouteObject {
   index?: boolean;
   path?: string;
-  requireAuth?: boolean;
+  canSkipAuth?: boolean;
   element: JSX.Element;
 }
 
-const AppRoutes: CustomRouteObject[] = [
+export const AppRoutes: CustomRouteObject[] = [
   {
     index: true,
     element: <Home />,
@@ -23,10 +23,9 @@ const AppRoutes: CustomRouteObject[] = [
   },
   {
     path: "/fetch-data",
-    requireAuth: true,
+    canSkipAuth: false,
     element: <FetchData />,
   },
-  ...ApiAuthorzationRoutes,
 ];
 
-export default AppRoutes;
+export const AuthRoutes: CustomRouteObject[] = [...ApiAuthorzationRoutes];

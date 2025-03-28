@@ -1,32 +1,33 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { Home } from "./pages/Home";
 import AuthorizeRoute from "./components/api-authorization/AuthorizeRoute";
-import { ApplicationPaths } from "./components/api-authorization/ApiAuthorizationConstants";
-import AppRoutes from "./AppRoutes";
+import { AppRoutes, AuthRoutes } from "./AppRoutes";
 
 export default function App() {
   return (
-    <Layout>
+    <>
+      <Routes>
+        {AuthRoutes.map((route, index) => {
+          const { element, canSkipAuth, ...rest } = route;
+          return <Route key={index} {...rest} element={element} />;
+        })}
+      </Routes>
       <Routes>
         {AppRoutes.map((route, index) => {
-          const { element, requireAuth, ...rest } = route;
+          const { element, canSkipAuth, ...rest } = route;
           return (
             <Route
               key={index}
               {...rest}
               element={
-                requireAuth ? (
+                <Layout>
                   <AuthorizeRoute {...rest} element={element} />
-                ) : (
-                  element
-                )
+                </Layout>
               }
             />
           );
         })}
       </Routes>
-    </Layout>
+    </>
   );
 }
